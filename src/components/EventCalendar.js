@@ -41,20 +41,11 @@ export default class EventCalendar extends Component {
 
     addEventButton = () => {
         this.state.eventsArr.push({ title: this.state.eventTitle, start: this.state.startTime, end: this.state.endTime })
-        console.log("events: ", this.state.eventsArr)
     }
-
-    componentDidUpdate(pP, pS, sS) {
-        if (pS.Calendar.events.length < this.state.eventsArr.length) {
-            this.setState({
-                eventsArr: this.state.eventsArr
-            })
-        }
-    }
-
 
     render() {
         return (
+
             <div id="calendar-container">
                 <div id='calendar'>
                     <FullCalendar
